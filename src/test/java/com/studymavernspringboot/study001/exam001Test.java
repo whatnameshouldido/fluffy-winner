@@ -27,8 +27,10 @@ public class exam001Test {
         assertThatThrownBy(() -> math.subTest001(70000, 7)).isInstanceOf(Exception.class);
         //RuntimeException 예외가 발생해야지만 정상 동작으로 인신한다.
         Throwable exception = assertThrows(RuntimeException.class, () -> {
-            math.subTest001(2330, 50002);
+            math.subTest001(77, 77777);
         });
+        if (exception instanceof RuntimeException) {
+        }
         System.out.println(exception.toString());
     }
 

@@ -136,4 +136,27 @@ public class MathExam {
         }
         return result;
     }
+
+    public int[] exam120899 (int[] array) throws Exception {
+        if (array == null) {
+            throw new Exception(String.format("array는 null이 아니어야 합니다."));
+        }
+        if (array.length < 1 || array.length > 100) {
+            throw new Exception(String.format("array 배열의 길이는 1~100개 이어야 합니다."));
+        }
+        int[] result = new int[] {0, 0};
+        for (int i=0; i < array.length-1; i++) {
+            if (array[i] < 0 || array[i] > 1000) {
+                throw new Exception(String.format("array[%d], 값 : %d의 범위는 0 ~ 1000 이어야 합니다.", i, array[i]));
+            }
+            else if (array[i] < array[i+1]) {
+                result[0] = array[i+1];
+                result[1] = i+1;
+            }
+            else {
+                result[0] = array[i];
+            }
+        }
+        return result;
+    }
 }

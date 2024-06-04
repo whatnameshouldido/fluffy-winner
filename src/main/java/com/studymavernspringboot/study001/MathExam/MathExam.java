@@ -44,7 +44,7 @@ public class MathExam {
             throw new Exception(String.format("height [%d] 는 1~200 이어야 합니다.", height));
         }
         for (int i = 0; i < array.length; i++) {
-            if(array[i] <= 0 || array[i] > 200) {
+            if (array[i] <= 0 || array[i] > 200) {
                 throw new Exception(String.format("array[%d] = [%d]는 1~200 이어야 합니다.", i, array[i]));
             }
             if (array[i] > height) {
@@ -57,7 +57,6 @@ public class MathExam {
     }
 
     public int exam120818(int price) throws Exception {
-        int result = 0;
 
         if (price < 10 || price > 1000000) {
             throw new Exception("price 값은 10 이상, 1000000 이하여야 합니다.");
@@ -67,20 +66,17 @@ public class MathExam {
             throw new Exception("price 값은 10원 단위로 1의 자리가 0이어야 합니다.");
         }
 
-        if (price >= 100000) {
-            result = price * 95 / 100;
-        }
-
-        if (price >= 300000) {
-            result = price * 90 / 100;
-        }
-
         if (price >= 500000) {
-            result = price * 80 / 100;
+            return price * 80 / 100;
+        } else if (price >= 300000) {
+            return price * 90 / 100;
+        } else if (price >= 100000) {
+            return price * 95 / 100;
+        } else {
+            return price;
         }
-
-        return result;
     }
+
 
     public int exam120837(double hp) throws Exception {
         if (hp%1>0) {
@@ -94,5 +90,9 @@ public class MathExam {
         result += (health%5)/3;
         result += (health%5)%3;
         return result;
+    }
+
+    public int exam120839() throws Exception {
+        return 0;
     }
 }

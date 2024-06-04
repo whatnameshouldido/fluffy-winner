@@ -90,13 +90,18 @@ public class exam001Test {
     public void exam120837() throws Exception {
         MathExam math = new MathExam();
 
-        assertThat(23).isEqualTo(5);
-        assertThat(24).isEqualTo(6);
-        assertThat(999).isEqualTo(201);
+        assertThat(math.exam120837(23)).isEqualTo(5);
+        assertThat(math.exam120837(24)).isEqualTo(6);
+        assertThat(math.exam120837(999)).isEqualTo(201);
 
         assertThatThrownBy(() -> math.exam120837(-1))
                 .isInstanceOf(Exception.class);
         assertThatThrownBy(() -> math.exam120837(1001))
                 .isInstanceOf(Exception.class);
+    }
+
+    @Test
+    public void exam120839() throws Exception {
+
     }
 }

@@ -33,4 +33,26 @@ public class MathExam {
         else
             return -1;
     }
+
+    public int exam120585(int[] array, int height) throws Exception {
+        int result = 0;
+
+        if (array == null || array.length <= 0 || array.length > 100) {
+            throw new Exception(String.format("array는 null 이 아니고, 길이가 1~100 이어야 합니다."));
+        }
+        if (height <= 0 || height > 200) {
+            throw new Exception(String.format("height [%d] 는 1~200 이어야 합니다.", height));
+        }
+        for (int i = 0; i < array.length; i++) {
+            if(array[i] <= 0 || array[i] > 200) {
+                throw new Exception(String.format("array[%d] = [%d]는 1~200 이어야 합니다.", i, array[i]));
+            }
+            if (array[i] > height) {
+                // 키 큰 사람을 누적해야 한다.
+                result++;
+            }
+        }
+
+        return result;
+    }
 }

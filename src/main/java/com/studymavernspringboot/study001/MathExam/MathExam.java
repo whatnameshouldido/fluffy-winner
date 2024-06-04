@@ -92,7 +92,26 @@ public class MathExam {
         return result;
     }
 
-    public int exam120839() throws Exception {
-        return 0;
+    public String exam120839(String rsp) throws Exception {
+        if (rsp == null) {
+            throw new Exception(String.format("rsp는 null이 아니어야 합니다."));
+        }
+        if (rsp.length() <= 0 || rsp.length() > 100) {
+            throw new Exception(String.format("rsp[%s] 문자열의 길이는 1~100글자여야 합니다.", rsp));
+        }
+        String result = "";
+        for (int i = 0; i < rsp.length(); i++) {
+            char ch = rsp.charAt(i);
+            if (ch == '2') {
+                result += "0";
+            } else if (ch == '0') {
+                result += "5";
+            } else if (ch == '5') {
+                result += "2";
+            } else {
+                throw new Exception(String.format("rsp[%c] 문자는 '2', '0', '5' 중에 하나여야 합니다."));
+            }
+        }
+        return result;
     }
 }

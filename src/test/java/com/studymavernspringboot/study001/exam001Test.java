@@ -70,6 +70,6 @@ public class exam001Test {
 
         assertThat(math.exam120585(new int[] {149, 180, 192, 170}, 167)).isEqualTo(3);
         assertThat(math.exam120585(new int[] {180, 120, 140}, 190)).isEqualTo(0);
-        assertThat(math.exam120585(new int[] {169, 177, 181, 190, 157, 159, 182}, 170)).isEqualTo(0);
+        assertThat(math.exam120585(new int[] {169, 177, 181, 190, 157, 159, 182}, 170)).isEqualTo(4);
     }
 }

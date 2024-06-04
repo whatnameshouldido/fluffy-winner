@@ -81,4 +81,18 @@ public class MathExam {
 
         return result;
     }
+
+    public int exam120837(double hp) throws Exception {
+        if (hp%1>0) {
+            throw new Exception("hp는 자연수입니다.");
+        }
+        if (hp<0||hp>1000) {
+            throw new Exception("hp는 0~1000 입니다.");
+        }
+        int health = (int)hp;
+        int result = health/5;
+        result += (health%5)/3;
+        result += (health%5)%3;
+        return result;
+    }
 }

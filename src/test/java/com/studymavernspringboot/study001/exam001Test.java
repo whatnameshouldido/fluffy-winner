@@ -147,4 +147,20 @@ public class exam001Test {
         assertThat(math.exam120899(new int[] {9, 10, 11, 8})).isEqualTo(new int[] {11, 2});
         assertThat(math.exam120899(new int[] {1, 4, 7, 8, 9, 52, 15, 58, 29})).isEqualTo(new int[] {58, 7});
     }
+
+    @Test
+    public void numberPrint() throws Exception {
+        int x = 0b1011; int y = 0206; int z = 0x2A0F;
+        char a = 'A', b = 'b', c = 'C';
+
+        System.out.println(String.format("10진수: x=%d, y=%d, z=%d", x, y, z));
+        System.out.println(String.format("8진수: x=%o, y=%o, z=%o", x, y, z));
+        System.out.println(String.format("16진수: x=%X, y=%X, z=%X", x, y, z));
+        System.out.println(String.format("Char: x=%c, y=%c, z=%c", x, y, z));
+
+        System.out.println(String.format("10진수: a=%d, b=%d, c=%d", (int)a, (int)b, (int)c));
+        System.out.println(String.format("8진수: a=%o, b=%o, c=%o", (int)a, (int)b, (int)c));
+        System.out.println(String.format("16진수: a=%X, b=%X, c=%X", (int)a, (int)b, (int)c));
+        System.out.println(String.format("Char: a=%c, b=%c, c=%c", (int)a, (int)b, (int)c));
+    }
 }

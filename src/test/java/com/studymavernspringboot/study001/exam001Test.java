@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class exam001Test {
     @Test
-    public void subtract001() throws Exception{
+    public void subtract001() throws Exception {
         // given    테스트하기 위한 준비 동작
 //        int num1 = -50001;
 //        int num2 = 3;
@@ -61,16 +61,16 @@ public class exam001Test {
     public void exam120585() throws Exception {
         System.out.println("exam120585");
         MathExam math = new MathExam();
-        Throwable ex1 = assertThrows(Exception.class, () -> math.exam120585(new int[] {}, 150));
+        Throwable ex1 = assertThrows(Exception.class, () -> math.exam120585(new int[]{}, 150));
         System.out.println(ex1.toString());
-        Throwable ex2 = assertThrows(Exception.class, () -> math.exam120585(new int[] {150, 201}, 130));
+        Throwable ex2 = assertThrows(Exception.class, () -> math.exam120585(new int[]{150, 201}, 130));
         System.out.println(ex2.toString());
-        Throwable ex3 = assertThrows(Exception.class, () -> math.exam120585(new int[] {150, 180}, 201));
+        Throwable ex3 = assertThrows(Exception.class, () -> math.exam120585(new int[]{150, 180}, 201));
         System.out.println(ex3.toString());
 
-        assertThat(math.exam120585(new int[] {149, 180, 192, 170}, 167)).isEqualTo(3);
-        assertThat(math.exam120585(new int[] {180, 120, 140}, 190)).isEqualTo(0);
-        assertThat(math.exam120585(new int[] {169, 177, 181, 190, 157, 159, 182}, 170)).isEqualTo(4);
+        assertThat(math.exam120585(new int[]{149, 180, 192, 170}, 167)).isEqualTo(3);
+        assertThat(math.exam120585(new int[]{180, 120, 140}, 190)).isEqualTo(0);
+        assertThat(math.exam120585(new int[]{169, 177, 181, 190, 157, 159, 182}, 170)).isEqualTo(4);
     }
 
 
@@ -123,14 +123,14 @@ public class exam001Test {
 
         Throwable ex = assertThrows(Exception.class, () -> math.exam120824(null));
         System.out.println(ex.toString());
-        ex = assertThrows(Exception.class, () -> math.exam120824(new int[] {}));
+        ex = assertThrows(Exception.class, () -> math.exam120824(new int[]{}));
         System.out.println(ex.toString());
-        ex = assertThrows(Exception.class, () -> math.exam120824(new int[] {2, 3, 7, 10, 1001, 653}));
+        ex = assertThrows(Exception.class, () -> math.exam120824(new int[]{2, 3, 7, 10, 1001, 653}));
         System.out.println(ex.toString());
 
-        assertThat(math.exam120824(new int[] {1, 2, 3, 4, 5})).isEqualTo(new int[] {2, 3});
-        assertThat(math.exam120824(new int[] {1, 3, 5, 7})).isEqualTo(new int[] {0, 4});
-        assertThat(math.exam120824(new int[] {1, 4, 7, 8, 9, 52, 15, 58, 29})).isEqualTo(new int[] {4, 5});
+        assertThat(math.exam120824(new int[]{1, 2, 3, 4, 5})).isEqualTo(new int[]{2, 3});
+        assertThat(math.exam120824(new int[]{1, 3, 5, 7})).isEqualTo(new int[]{0, 4});
+        assertThat(math.exam120824(new int[]{1, 4, 7, 8, 9, 52, 15, 58, 29})).isEqualTo(new int[]{4, 5});
     }
 
     @Test
@@ -140,17 +140,19 @@ public class exam001Test {
 
         Throwable ex = assertThrows(Exception.class, () -> math.exam120899(null));
         System.out.println(ex.toString());
-        ex = assertThrows(Exception.class, () -> math.exam120824(new int[] {}));
+        ex = assertThrows(Exception.class, () -> math.exam120824(new int[]{}));
         System.out.println(ex.toString());
 
-        assertThat(math.exam120899(new int[] {1, 8, 3})).isEqualTo(new int[] {8, 1});
-        assertThat(math.exam120899(new int[] {9, 10, 11, 8})).isEqualTo(new int[] {11, 2});
-        assertThat(math.exam120899(new int[] {1, 4, 7, 8, 9, 52, 15, 58, 29})).isEqualTo(new int[] {58, 7});
+        assertThat(math.exam120899(new int[]{1, 8, 3})).isEqualTo(new int[]{8, 1});
+        assertThat(math.exam120899(new int[]{9, 10, 11, 8})).isEqualTo(new int[]{11, 2});
+        assertThat(math.exam120899(new int[]{1, 4, 7, 8, 9, 52, 15, 58, 29})).isEqualTo(new int[]{58, 7});
     }
 
     @Test
     public void numberPrint() throws Exception {
-        int x = 0b1011; int y = 0206; int z = 0x2A0F;
+        int x = 0b1011;
+        int y = 0206;
+        int z = 0x2A0F;
         char a = 'A', b = 'b', c = 'C';
 
         System.out.println(String.format("10진수: x=%d, y=%d, z=%d", x, y, z));
@@ -158,9 +160,9 @@ public class exam001Test {
         System.out.println(String.format("16진수: x=%X, y=%X, z=%X", x, y, z));
         System.out.println(String.format("Char: x=%c, y=%c, z=%c", x, y, z));
 
-        System.out.println(String.format("10진수: a=%d, b=%d, c=%d", (int)a, (int)b, (int)c));
-        System.out.println(String.format("8진수: a=%o, b=%o, c=%o", (int)a, (int)b, (int)c));
-        System.out.println(String.format("16진수: a=%X, b=%X, c=%X", (int)a, (int)b, (int)c));
-        System.out.println(String.format("Char: a=%c, b=%c, c=%c", (int)a, (int)b, (int)c));
+        System.out.println(String.format("10진수: a=%d, b=%d, c=%d", (int) a, (int) b, (int) c));
+        System.out.println(String.format("8진수: a=%o, b=%o, c=%o", (int) a, (int) b, (int) c));
+        System.out.println(String.format("16진수: a=%X, b=%X, c=%X", (int) a, (int) b, (int) c));
+        System.out.println(String.format("Char: a=%c, b=%c, c=%c", (int) a, (int) b, (int) c));
     }
 }

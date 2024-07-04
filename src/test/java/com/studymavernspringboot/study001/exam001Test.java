@@ -165,4 +165,36 @@ public class exam001Test {
         System.out.println(String.format("16진수: a=%X, b=%X, c=%X", (int) a, (int) b, (int) c));
         System.out.println(String.format("Char: a=%c, b=%c, c=%c", (int) a, (int) b, (int) c));
     }
+
+    @Test
+    public void testAddRecursive() {
+        assertThat(this.addDecRecursive(1)).isEqualTo(1);
+        assertThat(this.addDecRecursive(5)).isEqualTo(15);
+        assertThat(this.addDecRecursive(10)).isEqualTo(55);
+        assertThat(this.addDecRecursive(20)).isEqualTo(210);
+
+        assertThat(this.addIncRecursive(1, -1)).isEqualTo(0);
+        assertThat(this.addIncRecursive(1, 0)).isEqualTo(0);
+        assertThat(this.addIncRecursive(1, 1)).isEqualTo(1);
+        assertThat(this.addIncRecursive(1, 5)).isEqualTo(15);
+        assertThat(this.addIncRecursive(1, 10)).isEqualTo(55);
+        assertThat(this.addIncRecursive(1, 20)).isEqualTo(210);
+    }
+
+    private int addDecRecursive(int n) {
+        if (n <= 0) {
+            return 0;
+        }
+        return n + addDecRecursive(n-1);
+    }
+
+    private int addIncRecursive(int start, int end) {
+        if (end <= 0) {
+            return 0;
+        }
+        else if (start >= end) {
+            return end;
+        }
+        return start + addIncRecursive(start + 1, end);
+    }
 }
